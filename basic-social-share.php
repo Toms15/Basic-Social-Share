@@ -3,7 +3,7 @@
 /*
 Plugin Name: Basic Social Share 
 Plugin URI: 
-Description: Visualizza i bottoni di share alla fine di ogni tuo post e aggiungi lo shortcode [socialshare] dove vuoi per visualizzarli nelle pagine.
+Description: Shows the share buttons at the end of each post and add the [socialshare] code where you want them to appear on the pages.
 Version: 1.0
 Author: Tommaso Costantini
 */
