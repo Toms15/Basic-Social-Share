@@ -1,6 +1,6 @@
 # Basic Social Share
 A simple Wordpress plugin for sharing on social networks.
-Shows the share buttons at the end of each post and add the shortcode [socialshare] where you want them to appear on the pages.
+Shows the share buttons at the end of each post and add the shortcode [basic-social-share] where you want them to appear on the pages.
 
 ## Compatibility
 This Basic Social Share plugin is compatible with:
@@ -13,9 +13,9 @@ This Basic Social Share plugin is compatible with:
 ## Get started
 1. Once the plugin is installed it creates the Basic Social Share item under Settings top level menu item.
 2. Select the social network in the plugin options page.
-3. Add shortcode [socialshare] where you want them to appear on the pages.
+3. Add shortcode [basic-social-share] where you want them to appear on the pages.
 
-You can add `<?php echo do_shortcode('[socialshare]'); ?>` to your theme code.
+You can add `<?php echo do_shortcode('[basic-social-share]'); ?>` to your theme code.
 
 ## To do
 - [ ] Counter

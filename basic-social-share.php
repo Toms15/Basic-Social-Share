@@ -3,7 +3,7 @@
 /*
 Plugin Name: Basic Social Share 
 Plugin URI: 
-Description: Shows the share buttons at the end of each post and add the [socialshare] code where you want them to appear on the pages.
+Description: Shows the share buttons at the end of each post and add the [basic-social-share] code where you want them to appear on the pages.
 Version: 1.0
 Author: Tommaso Costantini
 */
@@ -19,7 +19,7 @@ function social_share_page()
 {
    ?>
       <div class="wrap">
-         <h1>Opzioni | Basic Social Share</h1>
+         <h1>Options | Basic Social Share</h1>
  
          <form method="post" action="options.php">
             <?php
@@ -172,7 +172,7 @@ function add_social_share_icons($content)
 }
 
 add_filter("the_content", "add_social_share_icons");
-add_shortcode('socialshare', 'add_social_share_icons');
+add_shortcode('basic-social-share', 'add_social_share_icons');
 
 function social_share_style() 
 {
