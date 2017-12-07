@@ -128,42 +128,44 @@ function add_social_share_icons($content)
     
     if(get_option("social-share-facebook") == 1)
     {   
-        $html = $html . "<div class='bss-fb bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.facebook.com/sharer.php?u=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/facebook.png'><span>Facebook</span></a></div>";
+        $facebook_share_count = json_decode(file_get_contents("https://graph.facebook.com/{$url}"))->share->share_count;
+        $html = $html . "<div class='bss-fb bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.facebook.com/sharer.php?u=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/facebook.png' ."'><span>Facebook</span><span class='bss-count'>" . " " . $facebook_share_count . " ". "</span></a></div>";
     }
 
     if(get_option("social-share-twitter") == 1)
-    {
-        $html = $html . "<div class='bss-tw bss-button'><a href=\"\" onClick=\"javascript:window.open('https://twitter.com/share?url=" .  $url . "&text=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/twitter.png'><span>Twitter</span></a></div>";
+    {        
+        $html = $html . "<div class='bss-tw bss-button'><a href=\"\" onClick=\"javascript:window.open('https://twitter.com/share?url=" .  $url . "&text=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/twitter.png' ."'><span>Twitter</span></a></div>";
     }
 
     if(get_option("social-share-whatsapp") == 1)
     {
-        $html = $html . "<div class='bss-wa bss-button'><a href=\"\" onClick=\"javascript:window.open('whatsapp://send?url=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/whatsapp.png'><span>WhatsApp</span></a></div>";
+        $html = $html . "<div class='bss-wa bss-button'><a href=\"\" onClick=\"javascript:window.open('whatsapp://send?url=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/whatsapp.png' ."'><span>WhatsApp</span></a></div>";
     }
 
     if(get_option("social-share-tumblr") == 1)
     {
-        $html = $html . "<div class='bss-tu bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.tumblr.com/share/link?url=" . $url . "&name=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/tumblr.png'><span>Tumblr</span></a></div>";
+        $html = $html . "<div class='bss-tu bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.tumblr.com/share/link?url=" . $url . "&name=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/tumblr.png' ."'><span>Tumblr</span></a></div>";
     }
 
     if(get_option("social-share-telegram") == 1)
     {
-        $html = $html . "<div class='bss-tl bss-button'><a href=\"\" onClick=\"javascript:window.open('https://t.me/share/url?url=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/telegram.png'><span>Telegram</span></a></div>";
+        $html = $html . "<div class='bss-tl bss-button'><a href=\"\" onClick=\"javascript:window.open('https://t.me/share/url?url=" . $url . "', 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/telegram.png' ."'><span>Telegram</span></a></div>";
     }
 
     if(get_option("social-share-pinterest") == 1)
     {
-        $html = $html . "<div class='bss-pi bss-button'><a href=\"\" onClick=\"javascript:window.open('https://pinterest.com/pin/create/bookmarklet/?url=" . $url . "&description=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/pinterest.png'><span>Pinterest</span></a></div>";
+        $html = $html . "<div class='bss-pi bss-button'><a href=\"\" onClick=\"javascript:window.open('https://pinterest.com/pin/create/bookmarklet/?url=" . $url . "&description=' + document.title, 'newwindow', 'width=700,height=450');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/pinterest.png' ."'><span>Pinterest</span></a></div>";
     }
 
     if(get_option("social-share-googleplus") == 1)
     {
-        $html = $html . "<div class='bss-gp bss-button'><a href=\"\" onClick=\"javascript:window.open('https://plus.google.com/share?url=" . $url . "', 'newwindow', 'width=415,height=500');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/googleplus.png'><span>Google Plus</span></a></div>";
+        $html = $html . "<div class='bss-gp bss-button'><a href=\"\" onClick=\"javascript:window.open('https://plus.google.com/share?url=" . $url . "', 'newwindow', 'width=415,height=500');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/googleplus.png' ."'><span>Google Plus</span></a></div>";
     }
 
     if(get_option("social-share-linkedin") == 1)
-    {
-        $html = $html . "<div class='bss-li bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.linkedin.com/shareArticle?url=" . $url . "&title=' + document.title, 'newwindow', 'width=415,height=500');\"><img src='http://www.tommasocostantini.it/files-ext/icon-social/linkedin.png'><span>LinkedIn</span></a></div>";
+    {   
+        $linkedin_share_count = json_decode(file_get_contents("https://www.linkedin.com/countserv/count/share?url={$url}&format=json"))->count;
+        $html = $html . "<div class='bss-li bss-button'><a href=\"\" onClick=\"javascript:window.open('http://www.linkedin.com/shareArticle?url=" . $url . "&title=' + document.title, 'newwindow', 'width=415,height=500');\"><img src='" . plugin_dir_url(__FILE__) . '/icon-social/linkedin.png' ."'><span>LinkedIn</span><span class='bss-count'>" . " " . $linkedin_share_count . " ". "</span></a></div>";
     }
 
     $html = $html . "<div class='clear'></div></div>";

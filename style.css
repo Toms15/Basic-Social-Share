@@ -16,6 +16,10 @@
 	letter-spacing: 0.1em;
 	display: flex;
 }
+.bss-container > .bss-button > a > .bss-count {
+	margin-left: 15px;
+	font-weight: bold;
+} 
 .bss-container > .bss-button > a img {
 	height: 30px;
 	width: 30px;

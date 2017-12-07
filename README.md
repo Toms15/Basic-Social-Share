@@ -18,5 +18,5 @@ This Basic Social Share plugin is compatible with:
 You can add `<?php echo do_shortcode('[basic-social-share]'); ?>` to your theme code.
 
 ## To do
-- [ ] Counter
+- [x] Counter (active only for Facebook and LinkedIn)
 - [ ] Add more social network 
